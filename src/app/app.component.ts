@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { StateTemperatureChartComponent } from './state-temperature-chart/state-temperature-chart.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,6 +17,11 @@ import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-pr
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
+  //GRAFICA 1
+  temperaturasPorEstado: { [key: string]: any }[] = [];
+
+
   title = 'weather-dashboard';
 
   
@@ -38,6 +44,10 @@ export class AppComponent {
 
       });
 
+      this.getTemperatureData('los-mochis', '2021-10-10').subscribe(data => {
+        console.log(data);
+      });
+
 
   }
 
@@ -54,6 +64,12 @@ export class AppComponent {
     const url = `https://www.meteosource.com/api/v1/free/point?place_id=${place_id}&sections=hourly&timezone=UTC&language=en&units=auto&key=${this.apiKey}`;
     const data = this.http.get(url);
     return data;
+  }
+
+  getTemperatureData(place_id: string, date: string): Observable<any> {
+      const url = `https://www.meteosource.com/api/v1/flexi/time_machine?place_id=${place_id}&date=${date}&timezone=UTC&units=metric&key=${this.apiKey}`;
+      const data = this.http.get(url);
+      return data;
   }
 
 
