@@ -1,0 +1,33 @@
+<form class="navbar" #filterForm="ngForm" (ngSubmit)="onSubmit(filterForm)">
+    <div class="filter">
+        <label for="location">Ubicación:</label>
+        <input type="text" id="location" name="location" ngModel>
+    </div>
+    <div class="filter">
+        <label for="date">Selector de fechas:</label>
+        <input type="date" id="date" name="date" ngModel>
+    </div>
+    <div class="filter">
+        <label for="temp-min">Temperatura mayor a:</label>
+        <input type="number" id="temp-min" name="temp-min" placeholder="°C" ngModel>
+    </div>
+    <div class="filter">
+        <label for="temp-max">Temperatura menor a:</label>
+        <input type="number" id="temp-max" name="temp-max" placeholder="°C" ngModel>
+    </div>
+    <div class="filter">
+        <label for="pressure">Presión atmosférica:</label>
+        <input type="number" id="pressure" name="pressure" placeholder="hPa" ngModel>
+    </div>
+    <div class="filter">
+        <label for="storm">Probabilidad de tormenta:</label>
+        <input type="number" id="storm" name="storm" placeholder="%" ngModel>
+    </div>
+    <div class="filter">
+        <label for="cloudiness">Porcentaje de cielo nubloso:</label>
+        <input type="number" id="cloudiness" name="cloudiness" placeholder="%" ngModel>
+    </div>
+    <div class="filter">
+        <button type="submit">Aplicar Filtros</button>
+    </div>
+</form>

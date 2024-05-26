@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px;
+}
+
+.filter {
+    margin: 10px;
+}
+
+.filter label {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filter input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+.filter button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.filter button:hover {
+    background-color: #45a049;
+}
