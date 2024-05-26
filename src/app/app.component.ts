@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { InteractiveMapComponent } from './interactive-map/interactive-map.component';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,InteractiveMapComponent],
+  imports: [RouterOutlet,InteractiveMapComponent,NavBarComponent,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
