@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { StateTemperatureChartComponent } from './state-temperature-chart/state-temperature-chart.component';
+import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperature.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,InteractiveMapComponent,StateTemperatureChartComponent,NavBarComponent,FormsModule,DailyPrecipitationProbabilityComponent],
+  imports: [RouterOutlet,InteractiveMapComponent,StateTemperatureChartComponent,NavBarComponent,FormsModule,HourlyTemperatureComponent,DailyPrecipitationProbabilityComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

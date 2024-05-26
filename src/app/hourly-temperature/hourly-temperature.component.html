@@ -1,1 +1,29 @@
-<p>hourly-temperature works!</p>
+<div style="height: 300px;">
+    <!-- Linear bar -->
+    <ngx-charts-line-chart
+      [results]="lineData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel" >
+    </ngx-charts-line-chart>
+  </div>
+  
+
+  <!-- <div style="height: 300px;">
+    <ngx-charts-bar-vertical-stacked
+      [results]="barData"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [customColors]="colorScheme">
+    </ngx-charts-bar-vertical-stacked>
+  </div>
+   -->
