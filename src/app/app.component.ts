@@ -9,6 +9,8 @@ import { StateTemperatureChartComponent } from './state-temperature-chart/state-
 import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperature.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
 import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
+
+import { WindSpeedDirectionComponent } from './wind-speed-direction/wind-speed-direction.component';
 import { WeatherProbabilityComponent } from './weather-probability/weather-probability.component';
 
 @Component({
@@ -22,6 +24,7 @@ import { WeatherProbabilityComponent } from './weather-probability/weather-proba
     FormsModule,
     DailyPrecipitationProbabilityComponent,
     DailyTemperatureTrendComponent,
+    WindSpeedDirectionComponent
     WeatherProbabilityComponent,
   ],
   templateUrl: './app.component.html',
@@ -82,6 +85,29 @@ export class AppComponent {
       const data = this.http.get(url);
       return data;
   }
+
+  windSpeed = [
+    {
+      "name": "Lunes",
+      "value": 20
+    },
+    {
+      "name": "Martes",
+      "value": 40
+    },
+    {
+      "name": "Miercoles",
+      "value": 20
+    },
+    {
+      "name": "Jueves",
+      "value": 60
+    },
+    {
+      "name": "Viernes",
+      "value": 80
+    }
+  ];
 
 
 }
