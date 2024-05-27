@@ -1,0 +1,44 @@
+.cloud-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 300px;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #000000; /* Borde negro */
+    overflow-x: auto; /* Permite desplazamiento horizontal en dispositivos pequeños */
+  }
+  
+  .cloud-day {
+    flex: 0 0 auto; /* Ancho automático según el contenido */
+    text-align: center;
+  }
+  
+  .cloud {
+    width: 60px;
+    height: calc(100% - 40px); /* Altura de la nube, ajustada por el padding */
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ccircle cx="50" cy="50" r="45" fill="%23ffffff" stroke="%23000000" stroke-width="2"%3E%3C/circle%3E%3C/svg%3E'); /* Imagen de una nube SVG */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    box-sizing: border-box; /* Incluir el borde y el padding en el tamaño total */
+  }
+  
+  .cloud::after {
+    content: attr(data-cover) '%'; /* Mostrar el porcentaje de cobertura de nubes */
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .day-label {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  

@@ -9,8 +9,11 @@ import { StateTemperatureChartComponent } from './state-temperature-chart/state-
 import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperature.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
 import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
+import { WindSpeedDirectionComponent } from './wind-speed-direction/wind-speed-direction.component';
 import { WeatherProbabilityComponent } from './weather-probability/weather-probability.component';
 import { SummaryComponent } from './summary/summary.component';
+import { CloudCobertureComponent } from './cloud-coberture/cloud-coberture.component';
+
 
 @Component({
   selector: 'app-root',
@@ -23,9 +26,11 @@ import { SummaryComponent } from './summary/summary.component';
     FormsModule,
     DailyPrecipitationProbabilityComponent,
     DailyTemperatureTrendComponent,
+    WindSpeedDirectionComponent,
     WeatherProbabilityComponent,
     HourlyTemperatureComponent,
     SummaryComponent,
+    CloudCobertureComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -66,9 +71,10 @@ export class AppComponent {
   }
 
   getCityData(city: string): Observable<any> {
-    console.log(this.apiKey)
+    console.log(this.apiKey);
     const url = `${this.apiUrl}${city}&key=${this.apiKey}`;
     const data = this.http.get(url);
+    console.log(url);
     return data;
 
   }
@@ -77,6 +83,7 @@ export class AppComponent {
     //https://www.meteosource.com/api/v1/free/point?place_id=los-mochis&sections=current%2Chourly&timezone=UTC&language=en&units=auto&key=usf68syu2e2cbqcv3ru0kwkm56y3vptp7cngm8vl
     const url = `https://www.meteosource.com/api/v1/free/point?place_id=${place_id}&sections=hourly&timezone=UTC&language=en&units=auto&key=${this.apiKey}`;
     const data = this.http.get(url);
+    console.log(url);
     return data;
   }
 
@@ -85,6 +92,29 @@ export class AppComponent {
       const data = this.http.get(url);
       return data;
   }
+
+  windSpeed = [
+    {
+      "name": "Lunes",
+      "value": 20
+    },
+    {
+      "name": "Martes",
+      "value": 40
+    },
+    {
+      "name": "Miercoles",
+      "value": 20
+    },
+    {
+      "name": "Jueves",
+      "value": 60
+    },
+    {
+      "name": "Viernes",
+      "value": 80
+    }
+  ];
 
 
 }

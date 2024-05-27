@@ -1,12 +1,15 @@
 <app-nav-bar></app-nav-bar>
-<app-summary></app-summary>
 <app-interactive-map></app-interactive-map>
+<app-summary></app-summary>
 <app-daily-temperature-trend></app-daily-temperature-trend>
 <app-state-temperature-chart>
     [temperaturasPorEstado]="temperaturasPorEstado"
-</app-state-temperature-chart>
+</app-state-temperature-chart> 
 <app-hourly-temperature>
     [temperaturasPorHora]="temperaturasPorHora"
-</app-hourly-temperature>
-<app-weather-probability></app-weather-probability>
+</app-hourly-temperature> 
+<app-wind-speed-direction [data]="windSpeed"/>
+<app-cloud-coberture>
+    [dailyWeatherData]="dailyWeatherData"
+</app-cloud-coberture>
 
