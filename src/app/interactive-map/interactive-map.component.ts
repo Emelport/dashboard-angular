@@ -12,24 +12,11 @@ import { Map } from 'leaflet';
 })
 export class InteractiveMapComponent implements OnChanges {
 
-<<<<<<< HEAD
-  options = {
-    layers: [
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-      })
-    ],
-    zoom: 7,
-    // Los Mochis, Sinaloa, Mexico
-    center: L.latLng(25.7959, -108.9961)
-  };
-=======
   icono:string = `./src/img/set04/big/1.png`
 
   @Input() options: any;
   @Input() prueba:any;
   map: Map | undefined;
->>>>>>> main
 
    yIcon = L.icon({
     iconUrl: this.icono,
