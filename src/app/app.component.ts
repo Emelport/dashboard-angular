@@ -79,7 +79,7 @@ export class AppComponent {
         this.prueba = {
           lat: this.mapToNumberCoords(data.lat),
           lon: this.mapToNumberCoords(data.lon),
-          zoom: 7
+          zoom: 12
         }
       }); 
 
