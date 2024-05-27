@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { StateTemperatureChartComponent } from './state-temperature-chart/state-temperature-chart.component';
+import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperature.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
 import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
-
 
 @Component({
   selector: 'app-root',
