@@ -9,6 +9,7 @@ import { StateTemperatureChartComponent } from './state-temperature-chart/state-
 import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperature.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
 import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
+import { WeatherProbabilityComponent } from './weather-probability/weather-probability.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-
     FormsModule,
     DailyPrecipitationProbabilityComponent,
     DailyTemperatureTrendComponent,
+    WeatherProbabilityComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
