@@ -38,7 +38,9 @@ import { CloudCobertureComponent } from './cloud-coberture/cloud-coberture.compo
 export class AppComponent {
 
   //GRAFICA 1
-  temperaturasPorEstado: { [key: string]: any }[] = [];
+  temperaturasPorEstado:any[] = [];
+  temperaturasPorHora:any[] = [];
+  dailyWeatherData:any[] = [];
 
 
   title = 'weather-dashboard';

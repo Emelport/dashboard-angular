@@ -9,7 +9,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   styleUrl: './cloud-coberture.component.css'
 })
 export class CloudCobertureComponent {
-   
+  
+  // @Input() dailyWeatherData: any[] = [];
+
   dailyWeatherData = [
     //Dia, Cobertura de nubes en porcentaje
     { name: 'Lunes', value: 30 },

@@ -12,7 +12,6 @@ import * as L from 'leaflet';
 })
 export class InteractiveMapComponent {
 
-
   options = {
     layers: [
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
