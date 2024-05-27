@@ -1,8 +1,9 @@
-<app-nav-bar></app-nav-bar>
+
+<app-nav-bar [buscarCiudadMapa]="buscarCiudadMapa.bind(this)"></app-nav-bar>
 
 <div class="dashboard-header">
     <div class="dashboard-map">
-        <app-interactive-map></app-interactive-map>
+        <app-interactive-map [prueba]="prueba" [options]="newOptions"></app-interactive-map>
     </div>
     <div class="dashboard-summary">
         <app-summary></app-summary>
