@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WindRoseComponent } from './wind-rose.component';
+import { SummaryComponent } from './summary.component';
 
-describe('WindRoseComponent', () => {
-  let component: WindRoseComponent;
-  let fixture: ComponentFixture<WindRoseComponent>;
+describe('SummaryComponent', () => {
+  let component: SummaryComponent;
+  let fixture: ComponentFixture<SummaryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WindRoseComponent]
+      imports: [SummaryComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(WindRoseComponent);
+    fixture = TestBed.createComponent(SummaryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

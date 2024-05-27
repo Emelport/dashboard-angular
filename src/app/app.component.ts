@@ -11,7 +11,9 @@ import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-pr
 import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
 import { WindSpeedDirectionComponent } from './wind-speed-direction/wind-speed-direction.component';
 import { WeatherProbabilityComponent } from './weather-probability/weather-probability.component';
+import { SummaryComponent } from './summary/summary.component';
 import { CloudCobertureComponent } from './cloud-coberture/cloud-coberture.component';
+
 
 @Component({
   selector: 'app-root',
@@ -27,6 +29,7 @@ import { CloudCobertureComponent } from './cloud-coberture/cloud-coberture.compo
     WindSpeedDirectionComponent,
     WeatherProbabilityComponent,
     HourlyTemperatureComponent,
+    SummaryComponent,
     CloudCobertureComponent
   ],
   templateUrl: './app.component.html',
