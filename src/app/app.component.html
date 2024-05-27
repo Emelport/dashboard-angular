@@ -1,15 +1,13 @@
-<app-nav-bar></app-nav-bar>
-<app-interactive-map></app-interactive-map>
-<app-summary></app-summary>
-<app-daily-temperature-trend></app-daily-temperature-trend>
+<app-nav-bar [buscarCiudadMapa]="buscarCiudadMapa.bind(this)"></app-nav-bar>
+
+ <app-interactive-map [prueba]="prueba" [options]="newOptions"></app-interactive-map>
+<!--<app-daily-temperature-trend></app-daily-temperature-trend>
 <app-state-temperature-chart>
     [temperaturasPorEstado]="temperaturasPorEstado"
 </app-state-temperature-chart> 
 <app-hourly-temperature>
     [temperaturasPorHora]="temperaturasPorHora"
-</app-hourly-temperature> 
-<app-wind-speed-direction [data]="windSpeed"/>
-<app-cloud-coberture>
-    [dailyWeatherData]="dailyWeatherData"
-</app-cloud-coberture>
+</app-hourly-temperature> -->
+<!-- <app-wind-speed-direction [data]="windSpeed"/> -->
+
 
