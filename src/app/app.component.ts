@@ -10,6 +10,7 @@ import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperat
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
 import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
 import { WeatherProbabilityComponent } from './weather-probability/weather-probability.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,8 @@ import { WeatherProbabilityComponent } from './weather-probability/weather-proba
     DailyPrecipitationProbabilityComponent,
     DailyTemperatureTrendComponent,
     WeatherProbabilityComponent,
+    HourlyTemperatureComponent,
+    SummaryComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
