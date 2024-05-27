@@ -8,11 +8,22 @@ import { FormsModule } from '@angular/forms';
 import { StateTemperatureChartComponent } from './state-temperature-chart/state-temperature-chart.component';
 import { HourlyTemperatureComponent } from './hourly-temperature/hourly-temperature.component';
 import { DailyPrecipitationProbabilityComponent } from './daily-precipitation-probability/daily-precipitation-probability.component';
+import { DailyTemperatureTrendComponent } from './daily-temperature-trend/daily-temperature-trend.component';
+import { WindSpeedDirectionComponent } from './wind-speed-direction/wind-speed-direction.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,InteractiveMapComponent,StateTemperatureChartComponent,NavBarComponent,FormsModule,HourlyTemperatureComponent,DailyPrecipitationProbabilityComponent],
+  imports: [
+    RouterOutlet,
+    InteractiveMapComponent,
+    StateTemperatureChartComponent,
+    NavBarComponent,
+    FormsModule,
+    DailyPrecipitationProbabilityComponent,
+    DailyTemperatureTrendComponent,
+    WindSpeedDirectionComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -71,6 +82,29 @@ export class AppComponent {
       const data = this.http.get(url);
       return data;
   }
+
+  windSpeed = [
+    {
+      "name": "Lunes",
+      "value": 20
+    },
+    {
+      "name": "Martes",
+      "value": 40
+    },
+    {
+      "name": "Miercoles",
+      "value": 20
+    },
+    {
+      "name": "Jueves",
+      "value": 60
+    },
+    {
+      "name": "Viernes",
+      "value": 80
+    }
+  ];
 
 
 }
