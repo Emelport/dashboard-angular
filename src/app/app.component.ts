@@ -29,15 +29,20 @@ import { Map } from 'leaflet';
     DailyPrecipitationProbabilityComponent,
     DailyTemperatureTrendComponent,
     WindSpeedDirectionComponent,
-    WeatherProbabilityComponent
+    WeatherProbabilityComponent,
+    HourlyTemperatureComponent,
+    SummaryComponent,
+    CloudCobertureComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent  {
 
   //GRAFICA 1
-  temperaturasPorEstado: { [key: string]: any }[] = [];
+  temperaturasPorEstado:any[] = [];
+  temperaturasPorHora:any[] = [];
+  dailyWeatherData:any[] = [];
 
   title = 'weather-dashboard';
 

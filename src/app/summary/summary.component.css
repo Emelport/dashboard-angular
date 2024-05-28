@@ -4,8 +4,6 @@
     align-items: center;
     height: auto;
     width: auto;
-    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-    padding: 20px;
 }
 .weather-card {
     background: rgba(255, 255, 255, 0.1);
@@ -15,7 +13,7 @@
     text-align: left;
     color: #fff;
     font-family: 'Arial', sans-serif;
-    margin-right: 1%;
+    margin-right: 3%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
