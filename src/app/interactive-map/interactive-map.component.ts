@@ -12,19 +12,14 @@ import { Map } from 'leaflet';
 })
 export class InteractiveMapComponent implements OnChanges {
 
-  icono:string = `../src/img/set04/big/1.png`
+  // comillas invertidas
+  @Input() icono:string = '';
 
   @Input() options: any;
   @Input() prueba:any;
   map: Map | undefined;
 
-   yIcon = L.icon({
-    iconUrl: this.icono,
-    iconSize: [38, 95],
-    iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
    
-});
   
   ngOnChanges(changes: SimpleChanges) {
     console.log('Changes:', changes);
@@ -34,7 +29,15 @@ export class InteractiveMapComponent implements OnChanges {
     const newLng = changes['prueba'].currentValue.lon;
     const newZoom = changes['prueba'].currentValue.zoom;
     this.map?.setView(L.latLng(newLat, newLng), newZoom);
-    L.marker([newLat, newLng], {icon: this.yIcon}).addTo(this.map!);
+
+    const yIcon = L.icon({
+      iconUrl: this.icono,
+      iconSize: [178, 195],
+      iconAnchor: [22, 94],
+      popupAnchor: [-3, -76],
+     
+  });
+    L.marker([newLat, newLng], {icon: yIcon}).addTo(this.map!);
 
   }
 

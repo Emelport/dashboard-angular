@@ -57,6 +57,7 @@ export class AppComponent  {
     zoom: 7,
     center: L.latLng(19.42847, -99.12766)
   };
+  icon = `https://www.meteosource.com/static/img/ico/weather/1.svg`
   prueba = {
     lat: 19.42847,
     lon: -99.12766,
@@ -86,6 +87,7 @@ export class AppComponent  {
           lon: this.mapToNumberCoords(data.lon),
           zoom: 12
         }
+        this.icon = `https://www.meteosource.com/static/img/ico/weather/${data.current.icon_num}.svg`
       }); 
 
     });
