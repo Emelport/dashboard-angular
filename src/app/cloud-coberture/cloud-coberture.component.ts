@@ -10,16 +10,16 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 })
 export class CloudCobertureComponent {
   
-  // @Input() dailyWeatherData: any[] = [];
+  @Input() dailyWeatherData: any[] = [];
 
-  dailyWeatherData = [
-    //Dia, Cobertura de nubes en porcentaje
-    { name: 'Lunes', value: 30 },
-    { name: 'Martes', value: 22 },
-    { name: 'Miercoles', value: 25 },
-    { name: 'Jueves', value: 18 },
-    { name: 'Viernes', value: 12 },
-    { name: 'Sabado', value: 10 },
-    { name: 'Domingo', value: 17 },
-  ];
+  // dailyWeatherData = [
+  //   //Dia, Cobertura de nubes en porcentaje
+  //   { name: 'Lunes', value: 30 },
+  //   { name: 'Martes', value: 22 },
+  //   { name: 'Miercoles', value: 25 },
+  //   { name: 'Jueves', value: 18 },
+  //   { name: 'Viernes', value: 12 },
+  //   { name: 'Sabado', value: 10 },
+  //   { name: 'Domingo', value: 17 },
+  // ];
 }

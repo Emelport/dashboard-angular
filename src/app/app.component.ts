@@ -120,6 +120,7 @@ export class AppComponent  {
     //https://www.meteosource.com/api/v1/free/point?place_id=los-mochis&sections=current%2Chourly&timezone=UTC&language=en&units=auto&key=usf68syu2e2cbqcv3ru0kwkm56y3vptp7cngm8vl
     const url = `https://www.meteosource.com/api/v1/free/point?place_id=${place_id}&sections=current&timezone=UTC&language=en&units=auto&key=${this.apiKey}`;
     const data = this.http.get(url);
+
     console.log(url);
     return data;
   }
@@ -128,6 +129,10 @@ export class AppComponent  {
       const url = `https://www.meteosource.com/api/v1/flexi/time_machine?place_id=${place_id}&date=${date}&timezone=UTC&units=metric&key=${this.apiKey}`;
       const data = this.http.get(url);
       return data;
+  }
+
+  getWindData(data: any) {
+    // A partir de data obtener la velocidad y dirección del viento
   }
 
   windSpeed = [
@@ -227,15 +232,7 @@ export class AppComponent  {
     { name: 'Oaxaca', valueMax: 31, valueMin: 21 },
     { name: 'Puebla', valueMax: 28, valueMin: 16 }
   ];
-
-  
-  Localizacion: string = 'Los Mochis';
-  Pais: string = 'Mexico';
-  Imagen: string = 'https://via.placeholder.com/40';
-  Temperatura: string = '35°C'
-  SensacionTermica: string = 'RealFeel 33°'
-
-  single = [
+  weatherProbability = [
     {
       "name": "Lluvioso",
       "value": 25,
@@ -249,6 +246,14 @@ export class AppComponent  {
       "value": 10
     },
   ];
+
+  summary = {
+    Localizacion: 'Los Mochis',
+    Pais: 'Mexico',
+    Imagen: 'https://via.placeholder.com/40',
+    Temperatura: '35°C',
+    SensacionTermica: 'RealFeel 33°'
+  }
 
   
 }

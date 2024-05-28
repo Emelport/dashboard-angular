@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @Component({
@@ -12,19 +12,21 @@ export class WeatherProbabilityComponent {
 
   Dia: string = 'Tendencia de Temperatura Diaria';
 
-  single = [
-    {
-      "name": "Lluvioso",
-      "value": 25,
-    },
-    {
-      "name": "Nublado",
-      "value": 65
-    },
-    {
-      "name": "Despejado",
-      "value": 10
-    },
-  ];
+  @Input() weatherProbability: any[] = [];
+
+  // single = [
+  //   {
+  //     "name": "Lluvioso",
+  //     "value": 25,
+  //   },
+  //   {
+  //     "name": "Nublado",
+  //     "value": 65
+  //   },
+  //   {
+  //     "name": "Despejado",
+  //     "value": 10
+  //   },
+  // ];
 
 }

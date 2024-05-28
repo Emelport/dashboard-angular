@@ -10,9 +10,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 })
 export class DailyPrecipitationProbabilityComponent {
 
-  @Input() dailyPrecipitationProbability: any[] = []
+  @Input() data: any[] = []
 
-  barData = this.dailyPrecipitationProbability.map(data => ({
+  barData = this.data.map(data => ({
       name: data.name,
       series: [
         { name: "Precipitación", value: data.value },
