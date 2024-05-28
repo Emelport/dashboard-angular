@@ -89,6 +89,11 @@ export class AppComponent  {
           lon: this.mapToNumberCoords(data.lon),
           zoom: 12
         }
+
+        this.getWeatherData2(this.mapToNumberCoords(data.lat), this.mapToNumberCoords(data.lon)).subscribe(data => {
+          console.log("Weather 2",data);
+        });
+
         this.icon = `https://www.meteosource.com/static/img/ico/weather/${data.current.icon_num}.svg`
       }); 
 
@@ -117,13 +122,20 @@ export class AppComponent  {
 
   //OBTENCION DE DATOS
   getWeatherData(place_id: string, date: string): Observable<any> {
-    //https://www.meteosource.com/api/v1/free/point?place_id=los-mochis&sections=current%2Chourly&timezone=UTC&language=en&units=auto&key=usf68syu2e2cbqcv3ru0kwkm56y3vptp7cngm8vl
     const url = `https://www.meteosource.com/api/v1/free/point?place_id=${place_id}&sections=current&timezone=UTC&language=en&units=auto&key=${this.apiKey}`;
     const data = this.http.get(url);
 
     console.log(url);
     return data;
   }
+
+  getWeatherData2(lat: any, lon:any){
+    const apiKey = '1e90f84992af854d86aab5ff2a78ffc5';
+    const url = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    return this.http.get(url);
+    
+  }
+
 
   getTemperatureData(place_id: string, date: string): Observable<any> {
       const url = `https://www.meteosource.com/api/v1/flexi/time_machine?place_id=${place_id}&date=${date}&timezone=UTC&units=metric&key=${this.apiKey}`;
