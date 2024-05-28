@@ -22,9 +22,7 @@
 
     <div class="dashboard-grafica2">
         <a>Comparacion de Temperatura Estatal</a>
-        <app-state-temperature-chart >
-            [temperaturasPorEstado]="temperaturasPorEstado"
-        </app-state-temperature-chart>
+        <app-state-temperature-chart [temperaturasPorEstado]="temperaturasPorEstado" ></app-state-temperature-chart>
     </div>
 
 </div>
@@ -35,18 +33,12 @@
         <app-wind-speed-direction [data]="windSpeed"></app-wind-speed-direction>
     </div>
 
-
     <div class="dashboard-grafica5">
-        <app-cloud-coberture >
-            [dailyWeatherData]="dailyWeatherData"
-        </app-cloud-coberture>
+        <app-cloud-coberture [dailyWeatherData]="dailyWeatherData"></app-cloud-coberture>
     </div>
-
         
     <div class="dashboard-grafica6">
-        <app-weather-probability >
-            [data]="weatherProbability"
-        </app-weather-probability>
+        <app-weather-probability [weatherProbability]="weatherProbability"></app-weather-probability>
     </div>
 
 </div>
@@ -55,26 +47,11 @@
 
     <div class="dashboard-grafica3">
         <a>Comparacion de Temperatura por Hora</a>
-        <app-hourly-temperature>
-            [temperaturasPorHora]="temperaturasPorHora"
-        </app-hourly-temperature>
+        <app-hourly-temperature [hourlyTemperature]="hourlyTemperature"></app-hourly-temperature>
     </div>
 
     <div class="dashboard-grafica7">
-        <app-daily-precipitation-probability >
-            [data]="dailyPrecipitationProbability"
-        </app-daily-precipitation-probability>
+        <app-daily-precipitation-probability [data]="dailyPrecipitationProbability" > </app-daily-precipitation-probability>
     </div>
 
 </div>
- <app-interactive-map [prueba]="prueba" [options]="newOptions" [icono]="icon"></app-interactive-map>
-<!--<app-daily-temperature-trend></app-daily-temperature-trend>
-<app-state-temperature-chart>
-    [temperaturasPorEstado]="temperaturasPorEstado"
-</app-state-temperature-chart> 
-<app-hourly-temperature>
-    [temperaturasPorHora]="temperaturasPorHora"
-</app-hourly-temperature> -->
-<!-- <app-wind-speed-direction [data]="windSpeed"/> -->
-
-
