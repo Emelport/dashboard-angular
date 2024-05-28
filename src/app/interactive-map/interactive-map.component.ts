@@ -12,7 +12,7 @@ import { Map } from 'leaflet';
 })
 export class InteractiveMapComponent implements OnChanges {
 
-  icono:string = `./src/img/set04/big/1.png`
+  icono:string = `../src/img/set04/big/1.png`
 
   @Input() options: any;
   @Input() prueba:any;

@@ -2,45 +2,70 @@
 <app-nav-bar [buscarCiudadMapa]="buscarCiudadMapa.bind(this)"></app-nav-bar>
 
 <div class="dashboard-header">
+
     <div class="dashboard-map">
         <app-interactive-map [prueba]="prueba" [options]="newOptions"></app-interactive-map>
     </div>
+
     <div class="dashboard-summary">
         <app-summary></app-summary>
     </div>
+    
 </div>
+
+<div class="Contenedor_Grafica_1-2">
 
     <div class="dashboard-grafica1">
         <a>Variacion de Temperatura Semanal</a>
         <app-daily-temperature-trend></app-daily-temperature-trend>
     </div>
+
     <div class="dashboard-grafica2">
         <a>Comparacion de Temperatura Estatal</a>
         <app-state-temperature-chart >
             [temperaturasPorEstado]="temperaturasPorEstado"
         </app-state-temperature-chart>
     </div>
-    <div class="dashboard-grafica3">
-        <a>Comparacion de Temperatura Estatal</a>
-        <app-hourly-temperature>
-            [temperaturasPorHora]="temperaturasPorHora"
-        </app-hourly-temperature>
-    </div>
+
+</div>
+
+<div class="Contenedor_Grafica_4-6">
+
     <div class="dashboard-grafica4">
         <app-wind-speed-direction [data]="windSpeed"></app-wind-speed-direction>
     </div>
+
+
     <div class="dashboard-grafica5">
         <app-cloud-coberture >
             [dailyWeatherData]="dailyWeatherData"
         </app-cloud-coberture>
     </div>
+
+        
     <div class="dashboard-grafica6">
         <app-weather-probability >
             [data]="weatherProbability"
         </app-weather-probability>
     </div>
+
+</div>
+
+<div class="Contenedor_Grafica_3">
+
+    <div class="dashboard-grafica3">
+        <a>Comparacion de Temperatura por Hora</a>
+        <app-hourly-temperature>
+            [temperaturasPorHora]="temperaturasPorHora"
+        </app-hourly-temperature>
+    </div>
+
     <div class="dashboard-grafica7">
         <app-daily-precipitation-probability >
             [data]="dailyPrecipitationProbability"
         </app-daily-precipitation-probability>
     </div>
+
+</div>
+
+

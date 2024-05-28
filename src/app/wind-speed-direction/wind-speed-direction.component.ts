@@ -12,7 +12,7 @@ export class WindSpeedDirectionComponent {
   @Input() data: any[] = []
   
   
-  view: [number,number] = [500, 400];
+  view: [number,number] = [487, 350];
   legend: boolean = true;
   legendPosition: LegendPosition = LegendPosition.Below;
 

@@ -2,86 +2,152 @@
     position: absolute;
     width: 90%;
     height: 100%;
-    top: 31.5%;
-
-    /* Grid */
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr; 
-    grid-gap: 5px;
+
 }
 
 .dashboard-summary {
-    /* Posicion Absoluta a la izquierda del mapa */
     position: absolute;
-    top: 9.5%;
-    left: 0;
-    width: 70%;
-    border: .5px solid #ddd;
-    border-radius: 2px;
-    padding: 10px 0 10px 0;
+    top: 12%;
+    width: 66.8%;
+    margin-left: 0.7%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    padding: 10px;
     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
 
 }
 .dashboard-map {
-    /* Esquina superior Derecha */
     position: absolute;
-
-    top: 9.5%;
+    top: 12%;
     right: 0;
-    width: 30%;
-    height: 90%;
-    border: 2px solid #ddd;
-    border-radius: 2px;
+    width: 29.4%;
+    height: 74%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
 
+}
+
+/* Conjunto de graficos 1--------------------------------------------------------------------------------------- */
+.Contenedor_Grafica_1-2{
+    display: flex;
+    justify-content: left; 
+    align-items: flex-start;
+    margin-top: 13%;
+    margin-left: 0.5%;
+    margin-right: 1.5%;
+    
 }
 
 .dashboard-grafica1 {
-    position: absolute;
-    top: 32%;  
-     /*centrar  */
-    left: 0;
-    width: 30%;
-    height: 30%;
+    width: 31.7%;
+    text-align: center;
+    font-family: lucida sans;
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 0.2%;
+    margin-top: 0.5%;
+    height: 350px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); 
+
 }
+
 .dashboard-grafica2 {
-    position: absolute;
-    top: 15%;   
-    display: none;
+    width: 35.5%;
+    text-align: center;
+    font-family: lucida sans;
+    font-size: 16px;
+    padding: 5px;
+    height: 350px;
+    margin-left: 1%;
+    margin-top: 0.5%;
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+
 
 }
-.dashboard-grafica3 {
-    position: absolute;
-    top: 10%;   
-    display: none;
 
+/* Conjunto de graficos 2--------------------------------------------------------------------------------------- */
+.Contenedor_Grafica_4-6{
+    display: flex;
+    justify-content: left; 
+    align-items: center;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
 }
+
 .dashboard-grafica4 {
-    position: absolute;
-    top: 10%;   
-    display: none;
+    width: 32%;
+    height: 420px;
+    margin-left: 0.2%;
+    margin-top: 0.5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+
 
 }
 .dashboard-grafica5 {
-    position: absolute;
-    top: 10%;   
-    display: none;
-
+    width: 36.5%;
+    height: 420px;
+    margin-left: 0.6%;
+    margin-top: 0.5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); 
 }
+
 .dashboard-grafica6 {
-    position: absolute;
-    top: 10%;   
-    display: none;
+    width: 36.5%;
+    height: 420px;
+    margin-left: 1.4%;
+    margin-top: 0.5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
 
 }
+
+/* Conjunto de graficos 3--------------------------------------------------------------------------------------- */
+
+.Contenedor_Grafica_3{
+    display: flex;
+    justify-content: left; 
+    align-items: center;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+.dashboard-grafica3 {
+    width: 55%;
+    height: 320px;
+    margin-left: 0.2%;
+    margin-top: 0.5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); 
+
+}
+
 .dashboard-grafica7 {
-    position: absolute;
-    top: 10%;   
-    display: none;
-
+    width: 45%;
+    height: 320px;
+    margin-left: 0.2%;
+    margin-top: 0.5%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+    background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
 }
-.dashboard-grafica8 {
-    position: absolute;
-    top: 10%;   
-    display: none;
 
-}
