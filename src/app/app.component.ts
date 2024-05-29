@@ -145,7 +145,7 @@ export class AppComponent  {
             high: datax.list[0].main.temp_max,
             low: datax.list[0].main.temp_min,
             feelsLike: datax.list[0].main.feels_like,
-            visibility: datax.list[0].visibility,
+            visibility: datax.list[0].visibility / 100,
             wind: datax.list[0].wind.speed,
             humidity: datax.list[0].main.humidity,
             cloudiness: datax.list[0].clouds.all,
