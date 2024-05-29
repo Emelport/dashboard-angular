@@ -23,7 +23,7 @@
     top: 12%;
     right: 0;
     width: 30%;
-    height: 105%;
+    height: 108%;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 5px; 
@@ -96,7 +96,7 @@
 
 }
 .dashboard-grafica5 {
-    width: 36%;
+    width: 650px;
     height: 420px;
     margin-left: 0.6%;
     margin-top: 0.5%;
@@ -110,7 +110,7 @@
 .dashboard-grafica6 {
     width: 36.5%;
     height: 420px;
-    margin-left: 1.4%;
+    margin-left: 1%;
     margin-top: 0.5%;
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
