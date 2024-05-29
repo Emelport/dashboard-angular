@@ -15,6 +15,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { CloudCobertureComponent } from './cloud-coberture/cloud-coberture.component';
 import * as L from 'leaflet';
 import { Map } from 'leaflet';
+import { TemperatureinthedayComponent } from './temperatureintheday/temperatureintheday.component';
 
 
 @Component({
@@ -32,7 +33,8 @@ import { Map } from 'leaflet';
     WeatherProbabilityComponent,
     HourlyTemperatureComponent,
     SummaryComponent,
-    CloudCobertureComponent
+    CloudCobertureComponent,
+    TemperatureinthedayComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
