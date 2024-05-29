@@ -1,0 +1,9 @@
+<div class="Contenedor">
+    @for (hour of dailyTemperature; track $index) {
+        <div class="weather-card">
+            <p>{{ hour.hora }}⌚</p>
+            <div class="temperature">{{ hour.temperatura }} °C</div>
+            <p>{{ hour.humedad }}%💧</p>
+        </div>
+    }
+</div>
