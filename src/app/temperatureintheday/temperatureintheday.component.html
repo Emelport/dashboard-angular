@@ -1,9 +1,9 @@
 <div class="Contenedor">
     @for (hour of dailyTemperature; track $index) {
         <div class="weather-card">
-            <p>{{ hour.hora }}⌚</p>
-            <div class="temperature">{{ hour.temperatura }} °C</div>
-            <p>{{ hour.humedad }}%💧</p>
+            <p>{{ hour.name | date:'shortTime'  }}⌚</p>
+            <div class="temperature">{{ hour.value }} °C</div>
+            <p>{{ hour.humidity }}%💧</p>
         </div>
     }
 </div>

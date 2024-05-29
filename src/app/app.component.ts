@@ -119,7 +119,7 @@ export class AppComponent  {
           })
 
           this.weatherProbability2 = [
-            {name: 'Probabilidad de precipitacion', value: datax.list[5].pop},
+            {name: 'Precipitacion', value: datax.list[5].pop},
             {name: 'Lluvia', value: datax.list[5].rain ? datax.list[5].rain['3h'] : 0},
           ]
  

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @Component({
@@ -13,19 +13,20 @@ export class DailyTemperatureTrendComponent {
   xAxisLabel: string = 'Dias de la Semana';
   yAxisLabel: string = 'Temperatura';
 
-  tendenciaTemperaturaDiaria = [
-    {
-      name: "Semana Equis",
-      series: [
-        { name: "Lunes", value: 30},  
-        { name: "Martes", value: 22 },
-        { name: "Miercoles", value: 25 },
-        { name: "Jueves", value: 18 },
-        { name: "Viernes", value: 12 },
-        { name: "Sabado", value: 10 },
-        { name: "Domingo", value: 17 },
-      ]
-    },
-  ];
+  @Input() tendenciaTemperaturaDiaria: any[] = [];
+  // tendenciaTemperaturaDiaria = [
+  //   {
+  //     name: "Semana Equis",
+  //     series: [
+  //       { name: "Lunes", value: 30},  
+  //       { name: "Martes", value: 22 },
+  //       { name: "Miercoles", value: 25 },
+  //       { name: "Jueves", value: 18 },
+  //       { name: "Viernes", value: 12 },
+  //       { name: "Sabado", value: 10 },
+  //       { name: "Domingo", value: 17 },
+  //     ]
+  //   },
+  // ];
 
 }

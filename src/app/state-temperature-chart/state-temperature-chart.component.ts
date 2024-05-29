@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @Component({
@@ -8,7 +8,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   templateUrl: './state-temperature-chart.component.html',
   styleUrl: './state-temperature-chart.component.css'
 })
-export class StateTemperatureChartComponent {
+export class StateTemperatureChartComponent implements OnChanges {
 
   // Imputación de datos de temperatura por estado
   @Input() temperaturasPorEstado: any[] =[] // Input para recibir las temperaturas por estado
@@ -51,9 +51,17 @@ export class StateTemperatureChartComponent {
   xAxisLabel = 'Estados';
   yAxisLabel = 'Temperatura (°C)';
 
-  colorScheme = {
-    domain: ['#5AA454', '#E44D25'] // Colores para máxima y mínima respectivamente
-  };
+
+  ngOnChanges() {
+    this.barData = this.temperaturasPorEstado.map(data => ({
+      name: data.name,
+      series: [
+        { name: 'Temperatura Máxima', value: data.valueMax },
+        { name: 'Temperatura Mínima', value: data.valueMin }
+      ]
+    }));
+  }
+
 
   constructor() { }
   

@@ -24,27 +24,27 @@
 
         <div class="weather-row">
           <span class="label">Visibility:</span>
-          <span class="value">{{ weatherData[0].visibility }} km</span>
+          <span class="value">{{ weatherData.visibility }} km</span>
         </div>
-
-        <div class="weather-row">
-          <span class="label">Dew Point:</span>
-          <span class="value">{{ weatherData[0].dewPoint }}°F</span>
-        </div>
+  <!-- 
+          <div class="weather-row">
+            <span class="label">Dew Point:</span>
+            <span class="value">{{ weatherData.dewPoint }}°F</span>
+          </div> -->
 
         <div class="weather-row">
           <span class="label">Wind:</span>
-          <span class="value">{{ weatherData[0].wind }} mph</span>
+          <span class="value">{{ weatherData.wind }} mph</span>
         </div>
 
         <div class="weather-row">
           <span class="label">Humidity:</span>
-          <span class="value">{{ weatherData[0].humidity }}%</span>
+          <span class="value">{{ weatherData.humidity }}%</span>
         </div>
 
         <div class="weather-row">
           <span class="label">Cloudiness:</span>
-          <span class="value">{{ weatherData[0].cloudiness }}%</span>
+          <span class="value">{{ weatherData.cloudiness }}%</span>
         </div>
       </div>
       
@@ -53,12 +53,12 @@
         <div class="sunrise-section">
           <span class="icon-2">🌅</span>
           <div class="label-2">Sunrise</div>
-          <div class="time">{{ weatherData[0].sunrise }}</div>
+          <div class="time">{{ weatherData.sunrise }}</div>
         </div>
         <div class="sunset-section">
           <span class="icon-2">🌇</span>
           <div class="label-2">Sunset</div>
-          <div class="time">{{ weatherData[0].sunset }}</div>
+          <div class="time">{{ weatherData.sunset }}</div>
         </div>
       </div>
 </div>
