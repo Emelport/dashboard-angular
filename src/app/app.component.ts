@@ -105,11 +105,11 @@ export class AppComponent  {
     
           console.log('Datos de la ciudad:', datax);
           this.dailyWeatherData2 = [
-            {name :datax.list[5].dt_txt, value: datax.list[5].main.temp},
-            {name :datax.list[13].dt_txt, value: datax.list[13].main.temp},
-            {name :datax.list[21].dt_txt, value: datax.list[21].main.temp},
-            {name :datax.list[29].dt_txt, value: datax.list[29].main.temp},
-            {name :datax.list[37].dt_txt, value: datax.list[37].main.temp}
+            {name :datax.list[5].dt_txt.split(" ")[0], value: datax.list[5].main.temp},
+            {name :datax.list[13].dt_txt.split(" ")[0], value: datax.list[13].main.temp},
+            {name :datax.list[21].dt_txt.split(" ")[0], value: datax.list[21].main.temp},
+            {name :datax.list[29].dt_txt.split(" ")[0], value: datax.list[29].main.temp},
+            {name :datax.list[37].dt_txt.split(" ")[0], value: datax.list[37].main.temp}
           ]
           this.windSpeed2 = [
             {name :datax.list[5].dt_txt, value: datax.list[5].wind.speed},
@@ -123,15 +123,7 @@ export class AppComponent  {
             return { name: item.dt_txt, value: item.main.temp}
           })
 
-          this.hourlyTemperature2 = [
-            {
-              name: 'Temperatura',
-              series: this.hourlyTemperature2.map(item => ({
-                name: item.name,
-                value: item.value
-              }))
-            }
-          ];
+    
 
           this.weatherProbability2 = [
             {name: 'Precipitacion', value: datax.list[5].pop},
@@ -148,27 +140,19 @@ export class AppComponent  {
 
           ];
 
-          this.dailyPrecipitationProbability = this.dailyPrecipitationProbability.map(data => ({
-            name: data.name,
-            series: [
-              { name: "Precipitación", value: data.value },
-            ]
-          }));
- 
-
           this.summaryWeather2 = {
-            temperature: datax.list[5].main.temp,
-            high: datax.list[5].main.temp_max,
-            low: datax.list[5].main.temp_min,
-            feelsLike: datax.list[5].main.feels_like,
-            visibility: datax.list[5].visibility,
-            wind: datax.list[5].wind.speed,
-            humidity: datax.list[5].main.humidity,
-            cloudiness: datax.list[5].clouds.all,
+            temperature: datax.list[0].main.temp,
+            high: datax.list[0].main.temp_max,
+            low: datax.list[0].main.temp_min,
+            feelsLike: datax.list[0].main.feels_like,
+            visibility: datax.list[0].visibility,
+            wind: datax.list[0].wind.speed,
+            humidity: datax.list[0].main.humidity,
+            cloudiness: datax.list[0].clouds.all,
             sunrise: this.formatUnixTimestamp(datax.city.sunrise),
             sunset: this.formatUnixTimestamp(datax.city.sunset),
-            condition: datax.list[5].weather[0].main,
-            description: datax.list[5].weather[0].description
+            condition: datax.list[0].weather[0].main,
+            description: datax.list[0].weather[0].description
           }
 
           this.dailyTemperatura2 = [
@@ -212,6 +196,7 @@ export class AppComponent  {
         const tijuanalat = this.mapToNumberCoords('32.5027N')
         const tijuanalon = this.mapToNumberCoords('117.00371W')
 
+        this.temperaturasPorEstado2 = []
 
         this.getWeatherData2(guadalajaralat, guadalajaralon).subscribe((data:any) => {
           this.temperaturasPorEstado2.push({name: 'Guadalajara', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})

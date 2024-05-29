@@ -26,7 +26,12 @@
 
     <div class="dashboard-grafica2">
         <a>Comparacion de Temperatura Ciudades</a>
-        <app-state-temperature-chart [temperaturasPorEstado]="temperaturasPorEstado2" ></app-state-temperature-chart>
+        @if(temperaturasPorEstado2.length == 5)
+        {
+            <app-state-temperature-chart [temperaturasPorEstado]="temperaturasPorEstado2" ></app-state-temperature-chart>
+
+        }
+      
     </div>
 
 </div>

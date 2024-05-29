@@ -58,9 +58,9 @@ export class HourlyTemperatureComponent implements OnChanges{
   updateChartData() {
 
     this.lineData = this.hourlyTemperature.map(data => ({
-      name: data.name,
+      name: data.name.split(" ")[0],
       series: [
-        { name: "Temperatura", value: data.value },
+        { name: data.name.split(" ")[1], value: data.value },
       ]
     }));
   }

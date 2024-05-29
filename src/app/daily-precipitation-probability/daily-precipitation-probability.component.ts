@@ -18,6 +18,16 @@ export class DailyPrecipitationProbabilityComponent implements OnChanges{
   xAxisLabel = 'Dias';
   yAxisLabel = 'Probabilida de precipitación';
 
+
+//   this.dailyPrecipitationProbability = [
+            
+//     {name: datax.list[5].dt_txt, value: datax.list[5].pop},
+//     {name: datax.list[13].dt_txt, value: datax.list[13].pop},
+//     {name: datax.list[21].dt_txt, value: datax.list[21].pop},
+//     {name: datax.list[29].dt_txt, value: datax.list[29].pop},
+//     {name: datax.list[37].dt_txt, value: datax.list[37].pop}
+
+// ];
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -29,12 +39,8 @@ export class DailyPrecipitationProbabilityComponent implements OnChanges{
 
   updateChartData() {
     this.barData = this.data.map(data => ({
-      name: data.name,
-      series: [
-        { name: "Precipitación", value: data.value },
-      ]
+      name: data.name.split(" ")[0],
+      value: data.value * 100
     }));
   }
-
-
 }
