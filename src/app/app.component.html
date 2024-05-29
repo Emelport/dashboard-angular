@@ -8,9 +8,9 @@
     </div>
 
     <div class="dashboard-summary">
-        <app-summary></app-summary>
+        <app-summary [weatherData]="summaryWeather2"></app-summary>
         <div class="xd">
-            <app-temperatureintheday></app-temperatureintheday>
+            <app-temperatureintheday [dailyTemperature]="dailyTemperatura2"></app-temperatureintheday>
         </div>
     </div>
 
@@ -21,12 +21,17 @@
 
     <div class="dashboard-grafica1">
         <a>Variacion de Temperatura Semanal</a>
-        <app-daily-temperature-trend></app-daily-temperature-trend>
+        <app-daily-temperature-trend [tendenciaTemperaturaDiaria]="tendenciaTemperaturaDiaria2"></app-daily-temperature-trend>
     </div>
 
     <div class="dashboard-grafica2">
-        <a>Comparacion de Temperatura Estatal</a>
-        <app-state-temperature-chart [temperaturasPorEstado]="temperaturasPorEstado" ></app-state-temperature-chart>
+        <a>Comparacion de Temperatura Ciudades</a>
+        @if(temperaturasPorEstado2.length == 5)
+        {
+            <app-state-temperature-chart [temperaturasPorEstado]="temperaturasPorEstado2" ></app-state-temperature-chart>
+
+        }
+      
     </div>
 
 </div>
@@ -34,15 +39,18 @@
 <div class="Contenedor_Grafica_4-6">
 
     <div class="dashboard-grafica4">
-        <app-wind-speed-direction [data]="windSpeed"></app-wind-speed-direction>
+        <a>Velocidad del Viento</a>
+        <app-wind-speed-direction [data]="windSpeed2"></app-wind-speed-direction>
     </div>
 
     <div class="dashboard-grafica5">
-        <app-cloud-coberture [dailyWeatherData]="dailyWeatherData"></app-cloud-coberture>
+        <a>Covertura de Nubes</a>
+        <app-cloud-coberture [dailyWeatherData]="dailyWeatherData2"></app-cloud-coberture>
     </div>
         
     <div class="dashboard-grafica6">
-        <app-weather-probability [weatherProbability]="weatherProbability"></app-weather-probability>
+        <a>Probabilidad</a>
+        <app-weather-probability [weatherProbability]="weatherProbability2"></app-weather-probability>
     </div>
 
 </div>
@@ -51,10 +59,11 @@
 
     <div class="dashboard-grafica3">
         <a>Comparacion de Temperatura por Hora</a>
-        <app-hourly-temperature [hourlyTemperature]="hourlyTemperature"></app-hourly-temperature>
+        <app-hourly-temperature [hourlyTemperature]="hourlyTemperature2"></app-hourly-temperature>
     </div>
 
     <div class="dashboard-grafica7">
+        <a>Probabilidad de Precipitacion Diaria</a>
         <app-daily-precipitation-probability [data]="dailyPrecipitationProbability" > </app-daily-precipitation-probability>
     </div>
 
