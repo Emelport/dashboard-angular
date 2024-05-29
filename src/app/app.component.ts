@@ -46,12 +46,7 @@ export class AppComponent  {
   dailyWeatherData2:any[] = [];  //[{dia:temperatura}...]
   windSpeed2 : any[] = [];
   hourlyTemperature2:any[] = [] // (x Hora x Semana)
-  temperaturasPorEstado2:any[] = [
-    {
-      name: "",
-      series: []
-    },
-  ];
+  temperaturasPorEstado2:any[] = [];
   weatherProbability2:any[] = []
   summaryWeather2:any = {}
   dailyTemperatura2:any[] = [] // hora temperatura y humedad
@@ -125,23 +120,37 @@ export class AppComponent  {
             return { name: item.dt_txt, value: item.main.temp}
           })
 
+          this.hourlyTemperature2 = [
+            {
+              name: 'Temperatura',
+              series: this.hourlyTemperature2.map(item => ({
+                name: item.name,
+                value: item.value
+              }))
+            }
+          ];
+
           this.weatherProbability2 = [
             {name: 'Precipitacion', value: datax.list[5].pop},
             {name: 'Lluvia', value: datax.list[5].rain ? datax.list[5].rain['3h'] : 0},
           ]
 
           this.dailyPrecipitationProbability = [
-            {
-              name: 'Probabilidad de Precipitacion',
-              series: [
+            
                 {name: datax.list[5].dt_txt, value: datax.list[5].pop},
                 {name: datax.list[13].dt_txt, value: datax.list[13].pop},
                 {name: datax.list[21].dt_txt, value: datax.list[21].pop},
                 {name: datax.list[29].dt_txt, value: datax.list[29].pop},
                 {name: datax.list[37].dt_txt, value: datax.list[37].pop}
-              ]
-            },
+
           ];
+
+          this.dailyPrecipitationProbability = this.dailyPrecipitationProbability.map(data => ({
+            name: data.name,
+            series: [
+              { name: "Precipitación", value: data.value },
+            ]
+          }));
  
 
           this.summaryWeather2 = {
@@ -187,8 +196,6 @@ export class AppComponent  {
         // california   38.3004N   76.50745W
         // tijuana   32.5027N   117.00371W
 
-
-
         const guadalajaralat = this.mapToNumberCoords('20.66682N')
         const guadalajaralon = this.mapToNumberCoords('103.39182W')
         const ciudadmexicolat = this.mapToNumberCoords('19.42847N')
@@ -202,20 +209,31 @@ export class AppComponent  {
 
 
         this.getWeatherData2(guadalajaralat, guadalajaralon).subscribe((data:any) => {
-          this.temperaturasPorEstado2[0].series.push({name: 'Guadalajara', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
+          this.temperaturasPorEstado2.push({name: 'Guadalajara', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
         })
         this.getWeatherData2(ciudadmexicolat, ciudadmexicolon).subscribe((data:any) => {
-          this.temperaturasPorEstado2[0].series.push({name: 'Ciudad de Mexico', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
+          this.temperaturasPorEstado2.push({name: 'CDMX', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
         })
         this.getWeatherData2(losangeleslat, losangeleslon).subscribe((data:any) => {
-          this.temperaturasPorEstado2[0].series.push({name: 'Los Angeles', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
+          this.temperaturasPorEstado2.push({name: 'Los Angeles', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
         })
         this.getWeatherData2(californialat, californialon).subscribe((data:any) => {
-          this.temperaturasPorEstado2[0].series.push({name: 'California', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
+          this.temperaturasPorEstado2.push({name: 'California', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
         })
         this.getWeatherData2(tijuanalat, tijuanalon).subscribe((data:any) => {
-          this.temperaturasPorEstado2[0].series.push({name: 'Tijuana', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
+          this.temperaturasPorEstado2.push({name: 'Tijuana', valueMax: data.list[0].main.temp_max, valueMin: data.list[0].main.temp_min})
         })
+
+        this.temperaturasPorEstado2 = this.temperaturasPorEstado2.map(data => ({
+          name: data.name,
+          series: [
+            { name: 'Temperatura Máxima', value: data.valueMax },
+            { name: 'Temperatura Mínima', value: data.valueMin }
+          ]
+        }));
+    
+
+        console.log('Temperaturas por estado:', this.temperaturasPorEstado2);
 
     });
     

@@ -12,12 +12,8 @@ export class DailyPrecipitationProbabilityComponent {
 
   @Input() data: any[] = []
 
-  barData = this.data.map(data => ({
-      name: data.name,
-      series: [
-        { name: "Precipitación", value: data.value },
-      ]
-    }));
+  barData = this.data;
+    
   
   view: [number,number] = [700, 400];
   xAxisLabel = 'Dias';

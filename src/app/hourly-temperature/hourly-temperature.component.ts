@@ -27,15 +27,7 @@ export class HourlyTemperatureComponent {
   //   { name: '23:00', value: 27 }
   // ];
 
-  lineData = [
-    {
-      name: 'Temperatura',
-      series: this.hourlyTemperature.map(item => ({
-        name: item.name,
-        value: item.value
-      }))
-    }
-  ];
+  lineData = this.hourlyTemperature;
   
   xAxisLabel = 'Hora';
   yAxisLabel = 'Temperatura (°C)';
