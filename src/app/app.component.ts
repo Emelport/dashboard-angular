@@ -93,6 +93,8 @@ export class AppComponent  {
     
     this.getCityData(city).subscribe(data => {
         console.log(city, " ", data[0].lat, " ", data[0].lon)
+
+       
         this.prueba = {
           lat: this.mapToNumberCoords(data[0].lat),
           lon: this.mapToNumberCoords(data[0].lon),
@@ -101,6 +103,7 @@ export class AppComponent  {
 
         this.getWeatherData2(this.mapToNumberCoords(data[0].lat), this.mapToNumberCoords(data[0].lon)).subscribe((datax:any) => {
     
+          console.log('Datos de la ciudad:', datax);
           this.dailyWeatherData2 = [
             {name :datax.list[5].dt_txt, value: datax.list[5].main.temp},
             {name :datax.list[13].dt_txt, value: datax.list[13].main.temp},
@@ -169,12 +172,12 @@ export class AppComponent  {
           }
 
           this.dailyTemperatura2 = [
-            {name: datax.list[7].dt_txt, value: datax.list[1].main.temp, humidity: datax.list[1].main.humidity},
-            {name: datax.list[1].dt_txt, value: datax.list[2].main.temp, humidity: datax.list[2].main.humidity},
+            {name: datax.list[1].dt_txt, value: datax.list[1].main.temp, humidity: datax.list[1].main.humidity},
             {name: datax.list[3].dt_txt, value: datax.list[3].main.temp, humidity: datax.list[3].main.humidity},
-            {name: datax.list[5].dt_txt, value: datax.list[4].main.temp, humidity: datax.list[4].main.humidity},
-          ]
-            
+            {name: datax.list[5].dt_txt, value: datax.list[5].main.temp, humidity: datax.list[5].main.humidity},
+            {name: datax.list[7].dt_txt, value: datax.list[7].main.temp, humidity: datax.list[7].main.humidity},
+          
+          ];
 
           this.tendenciaTemperaturaDiaria2 = [
             {
@@ -188,6 +191,8 @@ export class AppComponent  {
             ]
             },
           ];
+
+
         });
         // ---------------------TEMPERATURAS POR ESTADOS PERO SON CIUDADES ---------------------
         // guadalajara   20.66682N   103.39182W
@@ -233,7 +238,7 @@ export class AppComponent  {
         }));
     
 
-        console.log('Temperaturas por estado:', this.temperaturasPorEstado2);
+        // console.log('Temperaturas por estado:', this.temperaturasPorEstado2);
 
     });
     

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,SimpleChanges,OnChanges } from '@angular/core';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @Component({
@@ -8,7 +8,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   templateUrl: './hourly-temperature.component.html',
   styleUrl: './hourly-temperature.component.css'
 })
-export class HourlyTemperatureComponent {
+export class HourlyTemperatureComponent implements OnChanges{
 
   @Input() hourlyTemperature: any[] = [];  // Input para recibir las temperaturas por hora
 
@@ -27,6 +27,20 @@ export class HourlyTemperatureComponent {
   //   { name: '23:00', value: 27 }
   // ];
 
+  // this.hourlyTemperature2 = datax.list.map((item:any) => { 
+  //   return { name: item.dt_txt, value: item.main.temp}
+  // })
+
+  // this.hourlyTemperature2 = [
+  //   {
+  //     name: 'Temperatura',
+  //     series: this.hourlyTemperature2.map(item => ({
+  //       name: item.name,
+  //       value: item.value
+  //     }))
+  //   }
+  // ];
+
   lineData = this.hourlyTemperature;
   
   xAxisLabel = 'Hora';
@@ -34,4 +48,20 @@ export class HourlyTemperatureComponent {
 
   constructor() { }
   
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['hourlyTemperature'] && this.hourlyTemperature.length > 0) {
+      console.log('ngOnChanges called', this.hourlyTemperature);
+      this.updateChartData();
+    }
+  }
+
+  updateChartData() {
+
+    this.lineData = this.hourlyTemperature.map(data => ({
+      name: data.name,
+      series: [
+        { name: "Temperatura", value: data.value },
+      ]
+    }));
+  }
 }
