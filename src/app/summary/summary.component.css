@@ -1,54 +1,129 @@
-.Contenedor {
+.contenedor {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    width: auto;
 }
+
 .weather-card {
-    background: rgba(255, 255, 255, 0.1);
+    width: 35%;
+    margin-right: 1.5%;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     text-align: left;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    margin-right: 3%;
+    position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .weather-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.location {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.country {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.weather-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.weather-info img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .temperature {
-    font-size: 36px;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.real-feel {
-    font-size: 16px;
+.degree-type {
+    font-size: 0.5em;
+    color: #333;
+}
+
+.high-low {
+    margin-top: 10%;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.details {
+    margin-top: 10%;
+    font-size: 1em;
+    font-family: sans-serif;
+    color: #333;
+}
+
+.weather-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Segunda Carta */
+.weather-card-2 {
+    width: 30%;
+    margin-right: 1.5%;
+    background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    font-family:sans-serif;
+    font-size: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card-2:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.weather-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+    }
+
+.value {
+    color: #555;
+}
+
+.icon {
+    font-size: 1.2em;
+}
+
+/* Tercera carta */
+.weather-card-3 {
+    width: 20%;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card-3:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.sunrise-section, .sunset-section {
+    margin-bottom: 20px;
+}
+
+.icon-2 {
+    font-size: 1.5em;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.label-2 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.time {
+    font-size: 1.5em;
+    margin-top: 5px;
 }

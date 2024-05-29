@@ -1,33 +1,64 @@
-<div class="Contenedor">
-
-    <div class="weather-card">
-        <div class="location">{{Localizacion}}</div>
-        <div class="country">{{Pais}}</div>
-        <div class="weather-info">
-            <img [src]="Imagen" alt="Weather icon">
-            <div class="temperature">{{Temperatura}}</div>
+<div class="contenedor">
+    <div class="weather-card" *ngFor="let weather of weatherData">
+        <div class="temperature">
+          {{ weather.temperature }}°F
+          <span class="degree-type"> / °C</span>
         </div>
-        <div class="real-feel">{{SensacionTermica}}</div>
-    </div>
 
-    <div class="weather-card">
-        <div class="location">{{Localizacion}}</div>
-        <div class="country">{{Pais}}</div>
-        <div class="weather-info">
-            <img [src]="Imagen" alt="Weather icon">
-            <div class="temperature">{{Temperatura}}</div>
+        <div class="high-low">
+          <p>High {{ weather.high }}°F</p> 
+          <p>Low {{ weather.low }}°F</p>
         </div>
-        <div class="real-feel">{{SensacionTermica}}</div>
-    </div>
 
-    <div class="weather-card">
-        <div class="location">{{Localizacion}}</div>
-        <div class="country">{{Pais}}</div>
-        <div class="weather-info">
-            <img [src]="Imagen" alt="Weather icon">
-            <div class="temperature">{{Temperatura}}</div>
+        <div class="details">
+          <div>{{ weather.description }}</div>
+          <div>Feels like {{ weather.feelsLike }}°F</div>
+          <div>{{ weather.condition }}</div>
         </div>
-        <div class="real-feel">{{SensacionTermica}}</div>
-    </div>
 
+        <img class="weather-icon" [src]="weather.icon" alt="Weather icon">
+
+     </div>
+
+      <div class="weather-card-2">
+
+        <div class="weather-row">
+          <span class="label">Visibility:</span>
+          <span class="value">{{ weatherData[0].visibility }} km</span>
+        </div>
+
+        <div class="weather-row">
+          <span class="label">Dew Point:</span>
+          <span class="value">{{ weatherData[0].dewPoint }}°F</span>
+        </div>
+
+        <div class="weather-row">
+          <span class="label">Wind:</span>
+          <span class="value">{{ weatherData[0].wind }} mph</span>
+        </div>
+
+        <div class="weather-row">
+          <span class="label">Humidity:</span>
+          <span class="value">{{ weatherData[0].humidity }}%</span>
+        </div>
+
+        <div class="weather-row">
+          <span class="label">Cloudiness:</span>
+          <span class="value">{{ weatherData[0].cloudiness }}%</span>
+        </div>
+      </div>
+      
+
+      <div class="weather-card-3">
+        <div class="sunrise-section">
+          <span class="icon-2">🌅</span>
+          <div class="label-2">Sunrise</div>
+          <div class="time">{{ weatherData[0].sunrise }}</div>
+        </div>
+        <div class="sunset-section">
+          <span class="icon-2">🌇</span>
+          <div class="label-2">Sunset</div>
+          <div class="time">{{ weatherData[0].sunset }}</div>
+        </div>
+      </div>
 </div>
