@@ -21,7 +21,7 @@
 
     <div class="dashboard-grafica1">
         <a>Variacion de Temperatura Semanal</a>
-        <app-daily-temperature-trend [tendenciaTemperaturaDiaria]="tendenciaTemperaturaDiaria"></app-daily-temperature-trend>
+        <app-daily-temperature-trend [tendenciaTemperaturaDiaria]="tendenciaTemperaturaDiaria2"></app-daily-temperature-trend>
     </div>
 
     <div class="dashboard-grafica2">
@@ -34,14 +34,17 @@
 <div class="Contenedor_Grafica_4-6">
 
     <div class="dashboard-grafica4">
+        <a>Velocidad del Viento</a>
         <app-wind-speed-direction [data]="windSpeed2"></app-wind-speed-direction>
     </div>
 
     <div class="dashboard-grafica5">
+        <a>Covertura de Nubes</a>
         <app-cloud-coberture [dailyWeatherData]="dailyWeatherData2"></app-cloud-coberture>
     </div>
         
     <div class="dashboard-grafica6">
+        <a>Probabilidad</a>
         <app-weather-probability [weatherProbability]="weatherProbability2"></app-weather-probability>
     </div>
 
@@ -55,6 +58,7 @@
     </div>
 
     <div class="dashboard-grafica7">
+        <a>Probabilidad de Precipitacion Diaria</a>
         <app-daily-precipitation-probability [data]="dailyPrecipitationProbability" > </app-daily-precipitation-probability>
     </div>
 

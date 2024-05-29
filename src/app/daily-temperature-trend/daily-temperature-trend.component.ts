@@ -14,19 +14,7 @@ export class DailyTemperatureTrendComponent {
   yAxisLabel: string = 'Temperatura';
 
   @Input() tendenciaTemperaturaDiaria: any[] = [];
-  // tendenciaTemperaturaDiaria = [
-  //   {
-  //     name: "Semana Equis",
-  //     series: [
-  //       { name: "Lunes", value: 30},  
-  //       { name: "Martes", value: 22 },
-  //       { name: "Miercoles", value: 25 },
-  //       { name: "Jueves", value: 18 },
-  //       { name: "Viernes", value: 12 },
-  //       { name: "Sabado", value: 10 },
-  //       { name: "Domingo", value: 17 },
-  //     ]
-  //   },
-  // ];
+
+
 
 }

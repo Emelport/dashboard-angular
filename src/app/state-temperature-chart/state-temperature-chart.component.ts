@@ -48,7 +48,7 @@ export class StateTemperatureChartComponent implements OnChanges {
     ]
   }));
 
-  xAxisLabel = 'Estados';
+  xAxisLabel = 'Ciudades';
   yAxisLabel = 'Temperatura (°C)';
 
 
